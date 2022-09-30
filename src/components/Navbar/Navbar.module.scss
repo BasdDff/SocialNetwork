@@ -1,0 +1,7 @@
+.nav {
+    &__burger {
+        @media (min-width: 480px) {
+            display: none;
+        }
+    }
+}

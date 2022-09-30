@@ -1,0 +1,13 @@
+.burger-color {
+	&:before,
+	&:after {
+		@apply bg-slate-300 dark:bg-slate-800;
+	}
+	span {
+		@apply bg-slate-300 dark:bg-slate-800;
+	}
+}
+
+.burger-content {
+	@apply bg-white;
+}

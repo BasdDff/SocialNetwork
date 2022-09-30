@@ -1,0 +1,72 @@
+.wrapper {
+    min-height: 100vh;
+
+    &__width {
+        display: block;
+
+        @media (min-width: 480px) {
+            display: flex;
+        }
+    }
+}
+
+.nav {
+    width: 20%;
+
+    @media (min-width: 480px) {
+        width: 10%;
+    }
+
+    @media (min-width: 992px) {
+        width: 20%;
+    }
+
+    position: relative;
+    width: 100%;
+
+    @media (min-width: 480px) {
+        position: fixed;
+        //background-color: rgba(0, 185, 255, 0.5);
+    }
+
+    &__wrapper {
+        z-index: 10;
+
+        @media (min-width: 480px) {
+            width: 10%;
+        }
+
+        @media (min-width: 992px) {
+            width: 20%;
+        }
+
+    }
+}
+
+.route {
+    width: 100%;
+
+    @media (min-width: 768px) {
+        width: 90%;
+    }
+
+    @media (min-width: 992px) {
+        width: 60%;
+    }
+
+}
+
+.wid {
+    //width: 20%;
+    position: fixed;
+
+    &__wrapper {
+        width: 20%;
+
+        display: none;
+
+        @media (min-width: 992px) {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.search {
+    &:hover {
+        @apply bg-opacity-25 bg-gray-500 transition duration-100;
+    }
+    &__wrapper {
+        padding: 10px;
+    }
+   
+    &.active {
+      
+    }
+    &__input {
+        background-color: transparent;
+        &::placeholder {
+            color: inherit;
+        }
+    }
+    &__icon {
+       
+    }
+}
