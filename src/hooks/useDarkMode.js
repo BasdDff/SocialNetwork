@@ -24,7 +24,6 @@ export const useDarkMode = () => {
         localTheme ? setTheme(localTheme) : setTheme("light")
 
         if (theme === "dark") {
-
             lightBtn.classList.add('display-none')
             document.documentElement.classList.add('dark')
             window.localStorage.setItem('theme', 'dark')

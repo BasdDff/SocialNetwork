@@ -1,0 +1,16 @@
+.links {
+    &__list {
+        font-size: 1.3rem;
+        //margin: 1rem;
+    }
+    &__item {
+        margin-bottom: 0.5rem
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        margin-right: 0.3rem;
+    }
+}

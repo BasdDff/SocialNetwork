@@ -1,7 +1,7 @@
 import styles from "./Burger.module.scss";
 import './Burger.scss'
 import React, { FC } from 'react';
-import avatar from '../../../../assets/avatar.jpg'
+import avatar from '../../../assets/avatar.jpg'
 
 interface Burger {
     active: boolean

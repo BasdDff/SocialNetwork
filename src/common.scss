@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.display-none {
+    @apply hidden #{!important};
+}
+
+.background-color {
+    @apply bg-white dark:bg-gray-900;
+}
+
+.color {
+    @apply text-gray-800 dark:text-gray-300;
+}
+
+.border {
+    @apply border-gray-300 rounded-md;
+}
+
+.padding {
+    @apply p-1.5;
+}
+
+.padding-2 {
+    @apply p-3;
+}
+
+.margin-3 {
+    @apply m-5;
+}

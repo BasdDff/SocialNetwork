@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import styles from './App.module.scss'
-import { useDarkMode } from './useDarkMode'
+import { useDarkMode } from './hooks/useDarkMode'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Test from './components/Test/Test';
+import SwitchTheme from './components/SwitchTheme/SwitchTheme';
 import MainLayout from './layouts/MainLayout/MainLayout';
+import Home from "./pages/Home/Home";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route element={<MainLayout/>}>
-                    <Route path="/Test" element={<Test/>}/>
+                    <Route path="/" element={<Home/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

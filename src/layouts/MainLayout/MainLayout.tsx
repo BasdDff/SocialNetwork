@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
-import Burger from '../../components/Test/UI/Burger/Burger';
 import Widget from '../../components/Widget/Widget';
 import styles from "./MainLayout.module.scss";
 
@@ -15,7 +14,9 @@ const MainLayout = () => {
                     </div>
                 </div>
                 <div className={styles.route}>
-                    <Outlet />
+                    <div className="margin-3">
+                        <Outlet />
+                    </div>
                 </div>
                 <div className={styles.wid__wrapper}>
                     <div className={styles.wid}>
