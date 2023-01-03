@@ -18,7 +18,9 @@ import {UserDecorator} from "../auth/user.decorator";
 import {UserEntity} from "../users/types/UserEntity";
 import {Request} from 'express'
 import {UserService} from "../users/user.service";
+import {ApiTags} from "@nestjs/swagger";
 
+@ApiTags('Post')
 @Controller('post')
 export class PostController {
     constructor(private postService: PostService, private userService: UserService) {
@@ -71,6 +73,7 @@ export class PostController {
     @Post('/like/:postId')
     async like(@Param('postId') postId: string, @UserDecorator() user: UserEntity) {
         const post = await this.postService.getPostById(postId)
+        console.log(post)
         // @ts-ignore
         if (!post.likes.includes(user._id.toString())) {
             await this.postService.like(post, user._id)

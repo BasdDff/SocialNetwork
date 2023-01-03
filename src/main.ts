@@ -17,7 +17,11 @@ const start = async () => {
         const document = SwaggerModule.createDocument(app, config)
         SwaggerModule.setup('/api/docs', app, document)
 
-        app.enableCors()
+        app.enableCors({
+            credentials: true,
+            origin: "http://localhost:3000"
+        })
+
         //app.useGlobalPipes(new ValidationPipe())
 
         await app.listen(PORT, () => console.log("server started on PORT " + PORT))

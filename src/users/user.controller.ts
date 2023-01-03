@@ -19,11 +19,13 @@ export class UserController {
     constructor(private userService: UserService) {
     }
 
+    @ApiOperation({summary: 'Search user by username'})
     @Get('search')
     async search(@Query('username') username: string) {
         return this.userService.search(username)
     }
 
+    @ApiOperation({summary: 'Get All Users'})
     @Get('/allUsers')
     async getAllUsers(@Query('page') page: number, @Query('pageSize') pageSize: number) {
         const users = await this.userService.getAllUsers(page, pageSize)
@@ -35,6 +37,7 @@ export class UserController {
         return {users: usersDto, totalCount: totalCount}
     }
 
+    @ApiOperation({summary: 'User follow to another user'})
     @UseGuards(JwtAuthGuard)
     @Post('follow/:userId')
     async follow(@UserDecorator() user: UserEntity, @Param('userId') userId: string) {
@@ -44,6 +47,7 @@ export class UserController {
         return this.userService.follow(userId, user._id.toString())
     }
 
+    @ApiOperation({summary: 'User unfollow to another user'})
     @UseGuards(JwtAuthGuard)
     @Post('unfollow/:userId')
     async unfollow(@UserDecorator() user: UserEntity, @Param('userId') userId: string) {
@@ -53,14 +57,16 @@ export class UserController {
         return this.userService.unfollow(userId, user._id.toString())
     }
 
-    @ApiOperation({summary: 'Create user'})
+    @ApiOperation({summary: 'Create user (SignUp)'})
     @ApiResponse({status: 200, type: User})
     @Post('/signUp')
     create(@Body() dto: CreateUserDto) {
+        console.log('sssss')
         const userData = this.userService.create(dto)
         return userData
     }
 
+    @ApiOperation({summary: 'Get user by Id (mongodb id)'})
     @Get(':userId')
     getUserById(@Param('userId') userId: string) {
         const user = this.userService.getUserById(userId)
@@ -68,6 +74,7 @@ export class UserController {
     }
 
     @UseGuards(JwtAuthGuard)
+    @ApiOperation({summary: 'Get current user (auth user)'})
     @Get()
     getCurrentUser(@UserDecorator() user: UserEntity) {
         return user
@@ -81,7 +88,7 @@ export class UserController {
     //     return this.userService.getAllUsers()
     // }
 
-    @ApiOperation({summary: "Выдача роли"})
+    @ApiOperation({summary: "Give role for user"})
     @ApiResponse({status: 200})
     //@Roles("admin")
     //@UseGuards(RolesGuard)

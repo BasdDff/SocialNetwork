@@ -8,8 +8,6 @@ export type PostDocument = Post & Document
 @Schema()
 export class Post extends mongoose.Document {
 
-
-
     @ApiProperty({example: '6308b748d6c1e29812db7f9e', description: "Email"})
     @Prop({
         type: String,
