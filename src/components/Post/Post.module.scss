@@ -1,0 +1,47 @@
+.wrapper {
+    padding: 0.625rem;
+    @media(min-width: 992px) {
+        padding: 1.25rem;
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 9999px;
+        margin-right: 1.25rem;
+        @media(min-width: 768px) {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+}
+
+.post {
+    &__description {
+        margin-bottom: 0.625rem;
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    &__likesQuantity {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    &__icons {
+        display: flex;
+        align-items: center;
+    }
+    &__icon_like {
+        cursor: pointer;
+    }
+}

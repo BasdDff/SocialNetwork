@@ -18,7 +18,7 @@ export const useDarkMode = () => {
     useEffect(() => {
         const lightBtn = document.querySelector('.light')
         const darkBtn = document.querySelector('.dark')
-     
+
         const localTheme = window.localStorage.getItem("theme");
 
         localTheme ? setTheme(localTheme) : setTheme("light")

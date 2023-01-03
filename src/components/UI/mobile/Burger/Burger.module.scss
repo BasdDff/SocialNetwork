@@ -47,14 +47,14 @@
     }
 
     @media (max-width: 480px) {
-        width: 60%;
+        width: 86%;
     }
 }
 
 .blur {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(67, 65, 65, 0.4);
     position: absolute;
     left: 50%;
 
@@ -66,15 +66,6 @@
         left: 60%;
     }
 }
-
-.contentHomePage {
-    color: white;
-}
-
-.contentOthersPage {
-    color: white;
-}
-
 
 .content.active {
     transform: translateX(0);

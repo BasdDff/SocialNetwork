@@ -31,13 +31,14 @@
 
     &__wrapper {
         z-index: 10;
-
+        margin: 0.625rem;
         @media (min-width: 480px) {
             width: 10%;
         }
 
         @media (min-width: 992px) {
             width: 20%;
+            margin: 1.25rem;
         }
 
     }
@@ -67,6 +68,7 @@
 
         @media (min-width: 992px) {
             display: block;
+            margin: 1.25rem;
         }
     }
 }

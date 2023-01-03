@@ -29,7 +29,7 @@ const Widget = () => {
     }, [text])
 
     return (
-        <div className='margin-3'>
+        <div>
             <Search text={text} setText={setText} users={users} setUsers={setUsers}/>
         </div>
     )
