@@ -22,6 +22,12 @@
     @apply border-gray-300 rounded-md;
 }
 
+.hover {
+    &:hover {
+        @apply bg-opacity-25 bg-gray-500 transition duration-100;
+    }
+}
+
 /*******************************************************************/
 //    0.3125rem; - 5px
 //    0.625rem; - 10px
@@ -46,4 +52,12 @@
 
 .margin-3 {
     @apply m-5; //1.25rem
+}
+
+.margin-bottom-1 {
+    @apply mb-4;
+}
+
+.margin-bottom-2 {
+    @apply mb-3;
 }

@@ -1,0 +1,52 @@
+.select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    //border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    //&:focus {
+    //    outline: none;
+    //    box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px #7e9bbd;
+    //}
+    &:hover {
+        box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px #7e9bbd;
+        transition: all 0.5s ease;
+    }
+    width: 150%;
+}
+
+// IE 10 - 11
+.select::-ms-expand {
+    display: none;
+}
+
+
+.select_wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select_wrapper {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -35px;
+
+        transform: translateY(-50%); //wtf
+        display: block;
+        //width: 10px;
+        //height: 10px;
+        //background-color: red;
+        pointer-events: none; //transparent element for cursor-pointer selector
+
+        //triangle
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 6px 0 6px;
+        border-color: #1065b7 transparent transparent transparent;
+    }
+}

@@ -12,8 +12,8 @@ interface InputProps {
     value: string
     error: string
     placeholder: string
-    className: string
-    classNameWrapper: string
+    className?: string
+    classNameWrapper?: string
     label: string
 }
 

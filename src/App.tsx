@@ -8,6 +8,8 @@ import MainLayout from './layouts/MainLayout/MainLayout';
 import Home from "./pages/Home/Home";
 import {useActions, useAppSelector} from "./hooks/useRedux";
 import Login from "./pages/Login/Login";
+import Users from "./pages/Users/Users";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
 
@@ -23,6 +25,9 @@ function App() {
             <Routes>
                 <Route element={<MainLayout/>}>
                     <Route path="/" element={<Home/>}/>
+                    <Route path="/users" element={<Users/>}/>
+                    <Route path="/profile/:userId" element={<Profile/>}/>
+                    <Route path="/profile/" element={<Profile/>}/>
                 </Route>
                 <Route path="/login" element={<Login/>}/>
             </Routes>

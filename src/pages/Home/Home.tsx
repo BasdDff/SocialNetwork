@@ -13,7 +13,7 @@ const Home = () => {
     }, [])
 
     const {posts} = useAppSelector(state => state.postReducer)
-    console.log(posts)
+
     return (
         <div>
             <NewPost/>

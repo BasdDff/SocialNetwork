@@ -3,10 +3,17 @@ import {IPost} from "../../types/IPost";
 
 interface PostState {
     posts: IPost[]
+    userPosts: IPost[]
 }
 
 const initialState: PostState = {
-    posts: []
+    posts: [],
+    userPosts: []
+}
+
+interface LikeProps {
+    userId: any
+    postId: any
 }
 
 export const postSlice = createSlice({
@@ -16,7 +23,7 @@ export const postSlice = createSlice({
         setPosts(state, action: PayloadAction<IPost[]>) {
             state.posts = action.payload
         },
-        likePost(state, action: PayloadAction<any>) {
+        likePost(state, action: PayloadAction<LikeProps>) {
             const index = state.posts.findIndex(post => post._id === action.payload.postId)
             if (!state.posts[index].likes.includes(action.payload.userId)) {
                 state.posts[index].likes.push(action.payload.userId)
@@ -26,6 +33,9 @@ export const postSlice = createSlice({
                     state.posts[index].likes.splice(indexUser, 1)
                 }
             }
+        },
+        setUserPosts(state, action: PayloadAction<IPost[]>) {
+            state.userPosts = action.payload
         }
     }
 })

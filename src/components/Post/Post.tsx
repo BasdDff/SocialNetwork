@@ -54,7 +54,7 @@ const Post: FC<PostProps> = ({_id,userId, image, description, likes}) => {
                     <div className={styles.post__likesQuantity}>
                         {likes.length > 0 ? likes.length : ""}
                     </div>
-                    <FavoriteBorderIcon className={styles.post__icon_like} onClick={() => likePost(_id)}/>
+                    <FavoriteBorderIcon className={styles.post__icon_like} onClick={() => likePost(_id, user?._id)}/>
                 </div>
             </div>
         </div>

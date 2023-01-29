@@ -1,0 +1,53 @@
+.back_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.back_info {
+
+}
+
+.back_arrow {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.background {
+    position: relative;
+    img {
+        width: 100%;
+        height: 240px;
+
+    }
+}
+
+.avatar {
+    margin-top: -50px;
+    margin-left: 20px;
+    position: relative;
+    z-index: 5;
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 9999px;
+    }
+}
+
+.btn_edit {
+    position: absolute;
+    right: 25px;
+    z-index: 6;
+    margin-top: 15px;
+}
+
+.info_wrapper {
+    margin-left: 15px;
+}
+
+.follow_wrapper {
+    display: flex;
+}
+
+.follow_following {
+    margin-right: 10px;
+}

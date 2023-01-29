@@ -23,10 +23,23 @@ export const getTimeLine = () => async (dispatch: AppDispatch) => {
     }
 }
 
-export const likePost = (postId: any) => async (dispatch: AppDispatch) => {
+export const likePost = (postId: any, userId: any) => async (dispatch: AppDispatch) => {
     try {
         const response = await postApi.likePost(postId)
+        if (response.status === 201) {
+            dispatch(postSlice.actions.likePost({postId, userId}))
+        }
+    } catch (err) {
 
+    }
+}
+
+export const getUserPosts = (userId: any) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await postApi.getUserPosts(userId)
+        if (response.status === 200) {
+            dispatch(postSlice.actions.setUserPosts(response.data))
+        }
     } catch (err) {
 
     }

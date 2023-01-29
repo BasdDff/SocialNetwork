@@ -9,5 +9,8 @@ export const postApi = {
     },
     likePost(postId: any) {
         return $api.post(`/post/like/${postId}`)
+    },
+    getUserPosts(userId: any) {
+       return $api.get(`/post/posts/${userId}`)
     }
 }

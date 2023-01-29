@@ -24,7 +24,6 @@ const LoginForm: FC<LoginFormProps> = ({login}) => {
     const signIn = () => {
         //event: React.FormEvent<HTMLButtonElement>
         //event.preventDefault()
-        console.log('aaa')
         login({email, password})
     }
 

@@ -31,7 +31,50 @@ export const getUserById = (userId: string) => async (dispatch: AppDispatch) => 
     try {
         const response = await userApi.getUserById(userId)
         if (response.status === 200) {
-            
+            dispatch(userSlice.actions.setCurrentUser(response.data))
+        }
+    } catch (err) {
+
+    }
+}
+
+export const getAllUsers = (page = 0, pageSize = 5) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await userApi.getAllUsers(page - 1, pageSize)
+        if (response.status === 200) {
+            dispatch(userSlice.actions.setUsers(response.data.users))
+            //dispatch(userSlice.actions.setCurrentPage(page + 1))
+            dispatch(userSlice.actions.setTotalCount(response.data.totalCount))
+        }
+    } catch (err) {
+
+    }
+}
+
+export const setCurrentPage = (currentPage: number) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(userSlice.actions.setCurrentPage(currentPage))
+    } catch (err) {
+
+    }
+}
+
+export const follow = (userId: string) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await userApi.follow(userId)
+        if (response.status === 201) {
+            dispatch(userSlice.actions.follow(userId))
+        }
+    } catch (err) {
+
+    }
+}
+
+export const unfollow = (userId: string) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await userApi.unfollow(userId)
+        if (response.status === 201) {
+            dispatch(userSlice.actions.unfollow(userId))
         }
     } catch (err) {
 

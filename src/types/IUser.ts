@@ -13,7 +13,7 @@ export interface IUser {
     avatar: string
     background: string
     about: string
-    joinedDay: Date
+    joinedDay: Date | string
     followers: string[]
     followings: string[]
 }
