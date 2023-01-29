@@ -34,6 +34,7 @@ export class UserController {
             usersDto.push(new GetUserDto(users[i]))
         }
         const totalCount = await this.userService.getTotalCountUsers()
+        console.log(totalCount)
         return {users: usersDto, totalCount: totalCount}
     }
 
@@ -61,7 +62,6 @@ export class UserController {
     @ApiResponse({status: 200, type: User})
     @Post('/signUp')
     create(@Body() dto: CreateUserDto) {
-        console.log('sssss')
         const userData = this.userService.create(dto)
         return userData
     }

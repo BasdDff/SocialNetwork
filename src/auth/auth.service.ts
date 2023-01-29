@@ -38,6 +38,7 @@ export class AuthService {
             avatar: user.avatar,
             background: user.background,
             about: user.about,
+            joinedDay: user.joinedDay,
             followers: user.followers,
             followings: user.followings
         }

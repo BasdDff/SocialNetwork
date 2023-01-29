@@ -98,7 +98,11 @@ export class UserService {
 
     async getTotalCountUsers() {
         // @ts-ignore
-        return this.userModel.collection.stats().count
+        //console.log(await this.userModel.collection.stats())
+        const request = await this.userModel.collection.stats()
+        console.log(request.count)
+        // @ts-ignore
+        return request.count
     }
 
     async follow(userId: string, currentUserId: string) {
@@ -109,7 +113,7 @@ export class UserService {
             return "You already follow this user"
         }
         await user.updateOne({$push: {followers: currentUserId}})
-        await currentUser.updateOne({$push: {following: userId}})
+        await currentUser.updateOne({$push: {followings: userId}})
         return "User has been followed"
     }
 

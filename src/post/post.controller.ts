@@ -91,11 +91,16 @@ export class PostController {
         return post
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('/posts/:userId')
-    async getPostsByUserId(@Param('userId') userId: string) {
-        if (userId) {
-            const user = await this.userService.getUserById(userId)
-            const userPosts = await this.postService.getPostsByUserId(user._id)
+    async getPostsByUserId(@Param('userId') userId: string, @UserDecorator() user: UserEntity) {
+         if (userId) {
+            const foundUser = await this.userService.getUserById(userId)
+            const userPosts = await this.postService.getPostsByUserId(foundUser._id)
+            return userPosts
+        } else if (user._id) {
+            const foundUser = await this.userService.getUserById(user._id)
+            const userPosts = await this.postService.getPostsByUserId(foundUser._id)
             return userPosts
         }
     }
